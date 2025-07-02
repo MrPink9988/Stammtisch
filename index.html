@@ -5,85 +5,153 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Stammtisch Personalvermittlung für Gastronomie" />
   <title>Stammtisch Personalvermittlung</title>
-  <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
   <style>
-    body {
-      margin: 0;
-      font-family: 'Open Sans', sans-serif;
-      background-color: #f9f6f2;
-      color: #111;
+    :root {
+      --bg-main: #f9f6f2;
+      --bg-highlight: #f0ede8;
+      --color-text: #111;
+      --color-border: #ccc;
+      --color-accent: #1a1a1a;
     }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-color: var(--bg-main);
+      color: var(--color-text);
+      line-height: 1.6;
+      padding-bottom: 4rem;
+    }
+
     header, section {
-      padding: 2rem 1rem;
-      max-width: 800px;
+      padding: 3rem 1.5rem;
+      max-width: 960px;
       margin: auto;
     }
+
     .hero {
       text-align: center;
-      padding: 4rem 1rem;
-    }
-    .hero img {
-      width: 120px;
-      margin-bottom: 1rem;
-    }
-    .hero h1 {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-    }
-    .hero p {
-      margin-bottom: 1.5rem;
-      font-size: 1.1rem;
-    }
-    .hero button {
-      padding: 0.75rem 1.5rem;
-      margin: 0.5rem;
-      border: 1px solid #111;
-      background: none;
-      cursor: pointer;
-    }
-    .highlight-section {
-      background-color: #f0ede8;
-      padding: 2.5rem 1rem;
-    }
-    .split-section {
       display: flex;
       flex-direction: column;
-      gap: 2rem;
-      padding: 2rem 1rem;
+      align-items: center;
+      gap: 1.25rem;
     }
+
+    .hero img {
+      width: 140px;
+    }
+
+    .hero .title-main {
+      font-size: 2.4rem;
+      font-weight: bold;
+      letter-spacing: 0.05rem;
+    }
+
+    .hero .title-sub {
+      font-size: 1rem;
+      font-weight: 400;
+      letter-spacing: 0.02rem;
+    }
+
+    .hero p {
+      font-size: 1.125rem;
+      color: #333;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .hero button {
+      padding: 0.75rem 1.5rem;
+      border: 1px solid var(--color-accent);
+      background: transparent;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .hero button:hover {
+      background: var(--color-accent);
+      color: white;
+    }
+
+    .highlight-section {
+      background-color: var(--bg-highlight);
+      border-top: 1px solid var(--color-border);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .highlight-section h2 {
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .split-section {
+      display: grid;
+      gap: 2rem;
+    }
+
     .split {
       background: #fff;
-      padding: 1.5rem;
-      border: 1px solid #ddd;
+      padding: 2rem;
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     }
-    h2 {
-      margin-top: 0;
+
+    .split h2 {
       font-size: 1.5rem;
+      margin-bottom: 0.75rem;
     }
-    ul {
+
+    .split ul {
       padding-left: 1rem;
+      list-style: disc;
     }
-    ul li {
+
+    .split ul li {
       margin-bottom: 0.5rem;
     }
+
+    .split button {
+      margin-top: 1rem;
+      padding: 0.6rem 1.2rem;
+      border: 1px solid var(--color-accent);
+      background: transparent;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .split button:hover {
+      background: var(--color-accent);
+      color: white;
+    }
+
     @media (min-width: 768px) {
       .split-section {
-        flex-direction: row;
-      }
-      .split {
-        width: 50%;
+        grid-template-columns: 1fr 1fr;
       }
     }
   </style>
 </head>
 <body>
   <header class="hero">
-    <img src="logo.png" alt="Stammtisch Logo">
-    <h1>STAMMTISCH PERSONALVERMITTLUNG</h1>
+    <img src="stammtisch-logo-transparent-cleaned.png" alt="Stammtisch Logo">
+    <div class="title-main">STAMMTISCH</div>
+    <div class="title-sub">PERSONALVERMITTLUNG</div>
     <p>Verlässliche Gastro-Vermittlung mit Handschlagqualität.</p>
-    <button>Mitarbeiter finden</button>
-    <button>Jetzt bewerben</button>
+    <div class="hero-buttons">
+      <button>Mitarbeiter finden</button>
+      <button>Jetzt bewerben</button>
+    </div>
   </header>
 
   <section class="highlight-section">
