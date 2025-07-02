@@ -34,18 +34,26 @@
       top: 0;
       width: 100%;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
       padding: 1rem 2rem;
       background-color: rgba(255, 255, 255, 0.8);
       z-index: 10;
     }
 
-    .navbar ul {
-      list-style: none;
+    .navbar .nav-left,
+    .navbar .nav-right {
       display: flex;
       gap: 1.5rem;
       align-items: center;
+    }
+
+    .navbar .nav-left {
+      margin-right: auto;
+    }
+
+    .navbar .nav-right {
+      margin-left: auto;
     }
 
     .navbar a {
@@ -219,15 +227,13 @@
 </head>
 <body>
   <nav class="navbar">
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#about">Über uns</a></li>
-    </ul>
-    <img src="logo.png" alt="Logo" />
-    <ul>
-      <li><a href="#employers">Arbeitgeber</a></li>
-      <li><a href="#applicants">Bewerber</a></li>
-    </ul>
+    <div class="nav-left">
+      <a href="#employers">Arbeitgeber</a>
+    </div>
+    <img src="stammtisch-logo-transparent-cleaned.png" alt="Logo" />
+    <div class="nav-right">
+      <a href="#applicants">Bewerber</a>
+    </div>
   </nav>
 
   <div class="carousel-container">
@@ -239,6 +245,7 @@
     <div class="carousel-overlay"></div>
 
     <div class="hero-overlay">
+      <img src="stammtisch-logo-transparent-cleaned.png" alt="Stammtisch Logo">
       <div class="title-main">STAMMTISCH</div>
       <div class="title-sub">PERSONALMAKLER</div>
       <p>Verlässliche Gastro-Vermittlung mit Handschlagqualität.</p>
