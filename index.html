@@ -29,22 +29,44 @@
       padding-bottom: 4rem;
     }
 
-    header, section {
-      padding: 3rem 1.5rem;
-      max-width: 960px;
-      margin: auto;
+    .carousel-container {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .carousel-container .slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .carousel-container .slide.active {
+      opacity: 1;
     }
 
     .hero {
-      text-align: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.85);
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 1.25rem;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      z-index: 2;
     }
 
     .hero img {
       width: 140px;
+      margin-bottom: 1rem;
     }
 
     .hero .title-main {
@@ -62,6 +84,7 @@
     .hero p {
       font-size: 1.125rem;
       color: #333;
+      margin: 1rem 0;
     }
 
     .hero-buttons {
@@ -81,6 +104,12 @@
     .hero button:hover {
       background: var(--color-accent);
       color: white;
+    }
+
+    header, section {
+      padding: 3rem 1.5rem;
+      max-width: 960px;
+      margin: auto;
     }
 
     .highlight-section {
@@ -143,16 +172,22 @@
   </style>
 </head>
 <body>
-  <header class="hero">
-    <img src="logo.png" alt="Stammtisch Logo">
-    <div class="title-main">STAMMTISCH</div>
-    <div class="title-sub">PERSONALVERMITTLUNG</div>
-    <p>Verlässliche Gastro-Vermittlung mit Handschlagqualität.</p>
-    <div class="hero-buttons">
-      <button>Mitarbeiter finden</button>
-      <button>Jetzt bewerben</button>
-    </div>
-  </header>
+  <div class="carousel-container">
+    <img src="https://picsum.photos/id/1011/1920/1080" class="slide active" />
+    <img src="https://picsum.photos/id/1015/1920/1080" class="slide" />
+    <img src="https://picsum.photos/id/1016/1920/1080" class="slide" />
+    <img src="https://picsum.photos/id/1025/1920/1080" class="slide" />
+    <header class="hero">
+      <img src="stammtisch-logo-transparent-cleaned.png" alt="Stammtisch Logo">
+      <div class="title-main">STAMMTISCH</div>
+      <div class="title-sub">PERSONALVERMITTLUNG</div>
+      <p>Verlässliche Gastro-Vermittlung mit Handschlagqualität.</p>
+      <div class="hero-buttons">
+        <button>Mitarbeiter finden</button>
+        <button>Jetzt bewerben</button>
+      </div>
+    </header>
+  </div>
 
   <section class="highlight-section">
     <h2>Über uns / Unsere Haltung</h2>
@@ -176,5 +211,17 @@
       <button>Initiativbewerbung senden</button>
     </div>
   </section>
+
+  <script>
+    (function() {
+      const slides = document.querySelectorAll('.slide');
+      let currentIndex = 0;
+      setInterval(() => {
+        slides[currentIndex].classList.remove('active');
+        currentIndex = (currentIndex + 1) % slides.length;
+        slides[currentIndex].classList.add('active');
+      }, 4000);
+    })();
+  </script>
 </body>
 </html>
