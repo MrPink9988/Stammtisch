@@ -63,7 +63,6 @@
       height: 60px;
     }
 
-    /* CAROUSEL */
     .carousel-container {
       position: relative;
       height: 100vh;
@@ -83,22 +82,24 @@
       opacity: 1;
     }
 
-    .hero {
+    .hero-overlay {
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 90%;
-      max-width: 600px;
-      background-color: rgba(255, 255, 255, 0.8);
-      padding: 2rem;
-      border-radius: 12px;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       text-align: center;
+      padding: 2rem;
       z-index: 2;
+      color: var(--color-text);
     }
 
-    .hero img {
-      width: 100px;
+    .hero-overlay img {
+      width: 120px;
       margin-bottom: 1rem;
     }
 
@@ -106,16 +107,14 @@
       font-size: 2.5rem;
       font-weight: bold;
       letter-spacing: 0.05rem;
-      color: var(--color-text);
     }
 
     .title-sub {
       font-size: 1.1rem;
-      letter-spacing: 0.02rem;
       margin-bottom: 1rem;
     }
 
-    .hero p {
+    .hero-overlay p {
       font-size: 1.125rem;
       margin: 1rem 0;
     }
@@ -128,7 +127,7 @@
       margin-top: 1rem;
     }
 
-    .hero button {
+    .hero-buttons button {
       padding: 0.75rem 1.5rem;
       border: 1px solid var(--color-accent);
       background: transparent;
@@ -138,7 +137,7 @@
       transition: all 0.3s ease;
     }
 
-    .hero button:hover {
+    .hero-buttons button:hover {
       background: var(--color-accent);
       color: white;
     }
@@ -209,8 +208,6 @@
   </style>
 </head>
 <body>
-
-  <!-- NAVIGATION -->
   <nav class="navbar">
     <ul>
       <li><a href="#">Home</a></li>
@@ -223,14 +220,13 @@
     </ul>
   </nav>
 
-  <!-- HERO + CAROUSEL -->
   <div class="carousel-container">
     <img src="chef.png" class="slide active" alt="Koch in Restaurantküche" />
     <img src="service.png" class="slide" alt="Servicekraft" />
     <img src="restaurantmanger.png" class="slide" alt="Restaurantmanager" />
     <img src="barkeeper.png" class="slide" alt="Barkeeperin in der Bar" />
-    
-    <header class="hero">
+
+    <div class="hero-overlay">
       <img src="stammtisch-logo-transparent-cleaned.png" alt="Stammtisch Logo">
       <div class="title-main">STAMMTISCH</div>
       <div class="title-sub">PERSONALVERMITTLUNG</div>
@@ -239,16 +235,14 @@
         <button>Mitarbeiter finden</button>
         <button>Jetzt bewerben</button>
       </div>
-    </header>
+    </div>
   </div>
 
-  <!-- ÜBER UNS -->
   <section class="highlight-section" id="about">
     <h2>Über uns / Unsere Haltung</h2>
     <p>Stammtisch steht für persönliche Vermittlung auf Augenhöhe. Keine Zeitarbeit, kein Versprechen ohne Substanz – nur ehrliches Matching zwischen Gastronom und Gastronom.</p>
   </section>
 
-  <!-- ARBEITGEBER / BEWERBER -->
   <section class="split-section">
     <div class="split" id="employers">
       <h2>Für Arbeitgeber</h2>
@@ -267,7 +261,6 @@
     </div>
   </section>
 
-  <!-- SLIDESCRIPT -->
   <script>
     (function () {
       const slides = document.querySelectorAll('.slide');
