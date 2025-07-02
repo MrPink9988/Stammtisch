@@ -3,16 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Stammtisch Personalvermittlung für Gastronomie" />
   <title>Stammtisch Personalvermittlung</title>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
   <style>
     :root {
       --bg-main: #f9f6f2;
       --bg-highlight: #f0ede8;
-      --color-text: #111;
+      --color-text: #112244;
       --color-border: #ccc;
-      --color-accent: #1a1a1a;
+      --color-accent: #112244;
     }
 
     * {
@@ -22,13 +21,49 @@
     }
 
     body {
-      font-family: 'Open Sans', sans-serif;
+      font-family: Georgia, serif;
       background-color: var(--bg-main);
       color: var(--color-text);
       line-height: 1.6;
       padding-bottom: 4rem;
     }
 
+    /* NAVBAR */
+    .navbar {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: rgba(255, 255, 255, 0.8);
+      z-index: 10;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: var(--color-text);
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .navbar a:hover {
+      color: #445577;
+    }
+
+    .navbar img {
+      height: 60px;
+    }
+
+    /* CAROUSEL */
     .carousel-container {
       position: relative;
       height: 100vh;
@@ -50,53 +85,55 @@
 
     .hero {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(255, 255, 255, 0.85);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 90%;
+      max-width: 600px;
+      background-color: rgba(255, 255, 255, 0.8);
       padding: 2rem;
+      border-radius: 12px;
+      text-align: center;
       z-index: 2;
     }
 
     .hero img {
-      width: 140px;
+      width: 100px;
       margin-bottom: 1rem;
     }
 
-    .hero .title-main {
-      font-size: 2.4rem;
+    .title-main {
+      font-size: 2.5rem;
       font-weight: bold;
       letter-spacing: 0.05rem;
+      color: var(--color-text);
     }
 
-    .hero .title-sub {
-      font-size: 1rem;
-      font-weight: 400;
+    .title-sub {
+      font-size: 1.1rem;
       letter-spacing: 0.02rem;
+      margin-bottom: 1rem;
     }
 
     .hero p {
       font-size: 1.125rem;
-      color: #333;
       margin: 1rem 0;
     }
 
     .hero-buttons {
       display: flex;
-      gap: 1rem;
+      justify-content: center;
       flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
     }
 
     .hero button {
       padding: 0.75rem 1.5rem;
       border: 1px solid var(--color-accent);
       background: transparent;
+      color: var(--color-accent);
+      font-weight: bold;
       cursor: pointer;
       transition: all 0.3s ease;
     }
@@ -172,14 +209,29 @@
   </style>
 </head>
 <body>
-  <div class="carousel-container">
-    <img src="chef.png" alt="Chef bei der Arbeit" class="slide active" />
-    <img src="service.png" alt="Servicekraft deckt Tisch ein" class="slide" />
-    <img src="restaurantmanger.png" alt="Restaurantmanager" class="slide" />
-    <img src="barkeeper.png" alt="Barkeeperin beim Cocktail eingießen" class="slide" />
 
+  <!-- NAVIGATION -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#about">Über uns</a></li>
+    </ul>
+    <img src="stammtisch-logo-transparent-cleaned.png" alt="Logo" />
+    <ul>
+      <li><a href="#employers">Arbeitgeber</a></li>
+      <li><a href="#applicants">Bewerber</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO + CAROUSEL -->
+  <div class="carousel-container">
+    <img src="chef.png" class="slide active" alt="Koch in Restaurantküche" />
+    <img src="service.png" class="slide" alt="Servicekraft" />
+    <img src="restaurantmanger.png" class="slide" alt="Restaurantmanager" />
+    <img src="barkeeper.png" class="slide" alt="Barkeeperin in der Bar" />
+    
     <header class="hero">
-      <img src="logo.png" alt="Stammtisch Logo">
+      <img src="stammtisch-logo-transparent-cleaned.png" alt="Stammtisch Logo">
       <div class="title-main">STAMMTISCH</div>
       <div class="title-sub">PERSONALVERMITTLUNG</div>
       <p>Verlässliche Gastro-Vermittlung mit Handschlagqualität.</p>
@@ -190,13 +242,15 @@
     </header>
   </div>
 
-  <section class="highlight-section">
+  <!-- ÜBER UNS -->
+  <section class="highlight-section" id="about">
     <h2>Über uns / Unsere Haltung</h2>
     <p>Stammtisch steht für persönliche Vermittlung auf Augenhöhe. Keine Zeitarbeit, kein Versprechen ohne Substanz – nur ehrliches Matching zwischen Gastronom und Gastronom.</p>
   </section>
 
+  <!-- ARBEITGEBER / BEWERBER -->
   <section class="split-section">
-    <div class="split">
+    <div class="split" id="employers">
       <h2>Für Arbeitgeber</h2>
       <p>Sie zahlen nur bei erfolgreicher Vermittlung. Kein Risiko. Kein Leasingvertrag.</p>
       <ul>
@@ -206,23 +260,25 @@
       </ul>
       <button>Erstkontakt aufnehmen</button>
     </div>
-    <div class="split">
+    <div class="split" id="applicants">
       <h2>Für Bewerber</h2>
       <p>Arbeiten, wo du hingehörst – Du bewirbst dich bei uns, wir kümmern uns persönlich. Keine Massenvermittlung. Kein Systemdruck.</p>
       <button>Initiativbewerbung senden</button>
     </div>
   </section>
 
+  <!-- SLIDESCRIPT -->
   <script>
-    (function() {
+    (function () {
       const slides = document.querySelectorAll('.slide');
-      let currentIndex = 0;
+      let current = 0;
       setInterval(() => {
-        slides[currentIndex].classList.remove('active');
-        currentIndex = (currentIndex + 1) % slides.length;
-        slides[currentIndex].classList.add('active');
+        slides[current].classList.remove('active');
+        current = (current + 1) % slides.length;
+        slides[current].classList.add('active');
       }, 4000);
     })();
   </script>
+
 </body>
 </html>
