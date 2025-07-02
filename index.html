@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Stammtisch Personalvermittlung</title>
+  <title>Stammtisch Personalmakler</title>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
   <style>
     :root {
@@ -80,6 +80,16 @@
 
     .carousel-container .slide.active {
       opacity: 1;
+    }
+
+    .carousel-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.8);
+      z-index: 1;
     }
 
     .hero-overlay {
@@ -226,10 +236,11 @@
     <img src="restaurantmanger.png" class="slide" alt="Restaurantmanager" />
     <img src="barkeeper.png" class="slide" alt="Barkeeperin in der Bar" />
 
+    <div class="carousel-overlay"></div>
+
     <div class="hero-overlay">
-      <img src="stammtisch-logo-transparent-cleaned.png" alt="Stammtisch Logo">
       <div class="title-main">STAMMTISCH</div>
-      <div class="title-sub">PERSONALVERMITTLUNG</div>
+      <div class="title-sub">PERSONALMAKLER</div>
       <p>Verlässliche Gastro-Vermittlung mit Handschlagqualität.</p>
       <div class="hero-buttons">
         <button>Mitarbeiter finden</button>
