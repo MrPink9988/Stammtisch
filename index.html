@@ -116,11 +116,17 @@
     }
 
     .hero-overlay .title-main {
-      font-size: 4rem;
+      font-size: 3rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.15rem;
       margin-bottom: 0.5rem;
+    }
+
+    @media (max-width: 480px) {
+      .hero-overlay .title-main {
+        font-size: 2.2rem;
+      }
     }
 
     .hero-overlay .title-sub {
@@ -145,6 +151,7 @@
     }
 
     .hero-buttons button {
+      flex: 1 1 200px;
       padding: 1rem 2rem;
       border: none;
       background: var(--color-accent);
