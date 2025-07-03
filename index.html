@@ -142,7 +142,8 @@
       line-height: 1.4;
     }
 
-    .hero-buttons {
+    .hero-buttons,
+    .split-buttons {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
@@ -150,7 +151,8 @@
       margin-top: 2rem;
     }
 
-    .hero-buttons button {
+    .hero-buttons button,
+    .split-buttons button {
       flex: 1 1 200px;
       padding: 1rem 2rem;
       border: none;
@@ -164,7 +166,8 @@
       transition: transform 0.2s ease, background 0.3s ease;
     }
 
-    .hero-buttons button:hover {
+    .hero-buttons button:hover,
+    .split-buttons button:hover {
       transform: translateY(-2px);
       background: #223366;
     }
@@ -213,20 +216,6 @@
       margin-bottom: 0.5rem;
     }
 
-    .split button {
-      margin-top: 1rem;
-      padding: 0.6rem 1.2rem;
-      border: 1px solid var(--color-accent);
-      background: transparent;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .split button:hover {
-      background: var(--color-accent);
-      color: white;
-    }
-
     @media (min-width: 768px) {
       .split-section {
         grid-template-columns: 1fr 1fr;
@@ -246,6 +235,13 @@
 
     .advisor h3 {
       font-size: 1.25rem;
+    }
+
+    .section-divider {
+      height: 2px;
+      background-color: #ddd;
+      margin: 4rem auto;
+      max-width: 80%;
     }
   </style>
 </head>
@@ -271,11 +267,11 @@
     <div class="hero-overlay">
       <div class="title-main">STAMMTISCH</div>
       <div class="title-sub">PERSONALMAKLER</div>
-        <p>
-          Lirum larum Löffelstiel<br>
-          wir vermitteln mit Gefühl und Stil.<br>
-          Vertrauensvoll. Persönlich. Direkt.
-        </p>
+      <p>
+        Lirum larum Löffelstiel<br>
+        wir vermitteln mit Gefühl und Stil.<br>
+        Vertrauensvoll. Persönlich. Direkt.
+      </p>
       <div class="hero-buttons">
         <button>Mitarbeiter finden</button>
         <button>Jetzt bewerben</button>
@@ -297,14 +293,20 @@
         <li>Nur qualifizierte Bewerber</li>
         <li>Vermittlung in Festanstellung</li>
       </ul>
-      <button>Erstkontakt aufnehmen</button>
+      <div class="split-buttons">
+        <button>Erstkontakt aufnehmen</button>
+      </div>
     </div>
     <div class="split" id="applicants">
       <h2>Für Bewerber</h2>
       <p>Arbeiten, wo du hingehörst – Du bewirbst dich bei uns, wir kümmern uns persönlich. Keine Massenvermittlung. Kein Systemdruck.</p>
-      <button>Initiativbewerbung senden</button>
+      <div class="split-buttons">
+        <button>Initiativbewerbung senden</button>
+      </div>
     </div>
   </section>
+
+  <div class="section-divider"></div>
 
   <section class="highlight-section" id="advisor">
     <div class="advisor">
